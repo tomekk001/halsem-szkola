@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halsem – szkoła żeglarstwa, Giżycko</title>
+<meta name="description" content="Kursy na patent żeglarza jachtowego, rejsy szkoleniowe i obozy dla młodzieży na Mazurach. Dobierz kurs w 4 pytaniach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400;62..125,600;62..125,800;62..125,900&display=swap">
+<style>
+:root{--morze:#0B2B4C;--morze-2:#123D69;--niebo:#E8F0F7;--bialy:#FFFFFF;--czerwien:#D7263D;--zolty:#F5C518;--tekst:#0E1A26;--szary:#4F6273;--linia:#C9D7E4;
+  --f:"Archivo","Arial Narrow",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bialy);color:var(--tekst);font-family:var(--f);font-size:1.0625rem;line-height:1.55;font-variation-settings:"wdth" 100}
+h1,h2,h3{margin:0;line-height:.92;text-wrap:balance;font-weight:900;font-stretch:72%;font-variation-settings:"wdth" 72;text-transform:uppercase;letter-spacing:-.005em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--zolty);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:max(18px,4vw)}
+
+/* Flagi sygnałowe jako znak firmy */
+.flags{display:inline-flex;gap:3px}
+.flags i{width:16px;height:16px;display:block}
+.f-h{background:linear-gradient(90deg,#fff 50%,var(--czerwien) 50%)}
+.f-a{background:linear-gradient(90deg,#fff 50%,#1446A0 50%);clip-path:polygon(0 0,100% 0,72% 50%,100% 100%,0 100%)}
+.f-l{background:conic-gradient(var(--zolty) 0 25%,#111 0 50%,var(--zolty) 0 75%,#111 0)}
+.f-s{background:#fff;box-shadow:inset 0 0 0 4px #1446A0}
+.f-e{background:linear-gradient(#1446A0 50%,var(--czerwien) 50%)}
+.f-m{background:linear-gradient(45deg,transparent 42%,#fff 42% 58%,transparent 58%),linear-gradient(-45deg,transparent 42%,#fff 42% 58%,transparent 58%),#1446A0}
+
+header{background:var(--morze);color:var(--bialy)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;font-weight:900;font-size:1.5rem;text-transform:uppercase;font-variation-settings:"wdth" 72}
+header nav{display:flex;gap:22px;font-weight:600;font-size:.95rem}
+header nav a{color:#C8D8EA;text-decoration:none}
+header nav a:hover{color:#fff}
+
+.hero{background:var(--morze);color:var(--bialy);position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1;padding-block:clamp(48px,8vw,110px) clamp(110px,14vw,180px);display:grid;gap:26px}
+.hero h1{font-size:clamp(3.6rem,1.6rem + 8.5vw,10rem)}
+.hero h1 span{display:block;color:var(--zolty)}
+.hero p{font-size:1.25rem;max-width:32em;color:#D6E3F0}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border:0;background:var(--zolty);color:var(--morze);padding:15px 26px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#fff}
+.btn--ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+.btn--ghost:hover{background:#fff;color:var(--morze)}
+.waves{position:absolute;left:0;right:0;bottom:0;height:120px;width:100%}
+.waves path{animation:drift 14s linear infinite}
+.waves path:nth-child(2){animation-duration:20s;animation-direction:reverse}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-200px)}}
+@media(prefers-reduced-motion:reduce){.waves path{animation:none}html{scroll-behavior:auto}}
+
+section{padding-block:clamp(64px,8vw,112px)}
+h2{font-size:clamp(2.8rem,1.6rem + 4.5vw,5.4rem)}
+.lead{font-size:1.15rem;color:var(--szary);max-width:38em;margin-top:18px}
+
+/* Quiz */
+.quiz{background:var(--niebo)}
+.quiz .box{margin-top:40px;background:var(--bialy);border:2px solid var(--morze);display:grid}
+@media(min-width:900px){.quiz .box{grid-template-columns:260px 1fr}}
+.steps{list-style:none;margin:0;padding:24px;background:var(--morze);color:#9FB7CF;display:flex;gap:10px;flex-wrap:wrap}
+@media(min-width:900px){.steps{flex-direction:column;gap:16px}}
+.steps li{font-weight:600}
+.steps li.on{color:var(--zolty)}
+.steps li.done{color:#fff}
+.q{padding:clamp(22px,4vw,40px);display:grid;gap:22px;align-content:start;min-height:360px}
+.q h3{font-size:clamp(1.8rem,1.2rem + 2vw,2.8rem)}
+.answers{display:grid;gap:10px}
+.answers button{font:inherit;text-align:left;background:var(--bialy);border:2px solid var(--linia);padding:14px 18px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between;gap:12px}
+.answers button:hover{border-color:var(--morze)}
+.answers button small{font-weight:400;color:var(--szary)}
+.res{display:grid;gap:16px}
+.res .name{font-size:clamp(2.4rem,1.4rem + 3vw,4rem)}
+.res .why{color:var(--szary);max-width:36em}
+.res dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:8px 0 0;border-top:2px solid var(--morze)}
+.res dl div{padding:12px 12px 0 0}
+.res dt{font-size:.85rem;color:var(--szary)}
+.res dd{margin:0;font-weight:800;font-size:1.3rem}
+.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--morze-2);text-decoration:underline;cursor:pointer;justify-self:start;font-weight:600}
+
+/* Terminy */
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 18px}
+.bar button{font:inherit;font-weight:700;border:2px solid var(--morze);background:transparent;padding:8px 14px;cursor:pointer;text-transform:uppercase;font-size:.9rem}
+.bar button[aria-pressed="true"]{background:var(--morze);color:#fff}
+.tablewrap{overflow-x:auto;border-top:3px solid var(--morze)}
+table{border-collapse:collapse;width:100%;min-width:680px}
+th,td{text-align:left;padding:14px 12px 14px 0;border-bottom:1px solid var(--linia);vertical-align:middle}
+th{font-size:.85rem;color:var(--szary);font-weight:600}
+td.kurs{font-weight:800;font-size:1.15rem}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.seats{display:flex;gap:3px;align-items:center}
+.seats i{width:10px;height:18px;background:var(--morze)}
+.seats i.free{background:var(--zolty)}
+.seats span{margin-left:8px;font-size:.9rem;color:var(--szary);white-space:nowrap}
+.full{color:var(--czerwien);font-weight:700}
+tr.hl{background:#FFF8D6}
+
+.boats{display:grid;gap:24px;margin-top:40px}
+@media(min-width:800px){.boats{grid-template-columns:repeat(3,1fr)}}
+.boat{border-top:6px solid var(--c);padding-top:16px;display:grid;gap:8px}
+.boat h3{font-size:2rem}
+.boat p{color:var(--szary)}
+.boat ul{margin:4px 0 0;padding:0;list-style:none;font-weight:600;font-size:.95rem;display:grid;gap:4px}
+
+footer{background:var(--morze);color:#C8D8EA;padding-block:30px;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#"><span class="flags" aria-hidden="true"><i class="f-h"></i><i class="f-a"></i><i class="f-l"></i><i class="f-s"></i><i class="f-e"></i><i class="f-m"></i></span>Halsem</a>
+  <nav aria-label="Menu"><a href="#dobor">Dobierz kurs</a><a href="#terminy">Terminy</a><a href="#flota">Flota</a></nav>
+</div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <h1>Zrób patent <span>w dwa tygodnie</span></h1>
+    <p>Szkoła żeglarstwa w Giżycku. Uczymy na wodzie, nie z tablicy: od pierwszego zwrotu przez sztag po samodzielne prowadzenie jachtu po Śniardwach.</p>
+    <div class="cta"><a class="btn" href="#dobor">Dobierz kurs</a><a class="btn btn--ghost" href="#terminy">Zobacz terminy</a></div>
+  </div>
+  <svg class="waves" viewBox="0 0 1600 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 Q100 20 200 60 T400 60 T600 60 T800 60 T1000 60 T1200 60 T1400 60 T1600 60 T1800 60 V120 H0Z" fill="#123D69"/>
+    <path d="M0 80 Q100 50 200 80 T400 80 T600 80 T800 80 T1000 80 T1200 80 T1400 80 T1600 80 T1800 80 V120 H0Z" fill="#FFFFFF"/>
+  </svg>
+</section>
+
+<section class="quiz" id="dobor">
+  <div class="wrap">
+    <h2>Który kurs dla Ciebie?</h2>
+    <p class="lead">Cztery pytania i podpowiemy, od czego zacząć. Bez zapisywania się i bez maila.</p>
+    <div class="box">
+      <ol class="steps" id="steps"><li>Doświadczenie</li><li>Wiek</li><li>Czas</li><li>Cel</li><li>Wynik</li></ol>
+      <div class="q" id="q" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="terminy">
+  <div class="wrap">
+    <h2>Terminy 2027</h2>
+    <p class="lead">Grupy do ośmiu osób na jednym instruktorze. Żółte pola to wolne miejsca.</p>
+    <div class="bar" id="bar" role="group" aria-label="Miesiąc"></div>
+    <div class="tablewrap"><table><thead><tr><th>Kurs</th><th>Termin</th><th>Dni</th><th>Miejsca</th><th>Cena</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div>
+</section>
+
+<section id="flota" style="background:var(--niebo)">
+  <div class="wrap">
+    <h2>Na czym pływamy</h2>
+    <div class="boats">
+      <article class="boat" style="--c:var(--czerwien)"><h3>Omega</h3><p>Lekka łódka bez kabiny. Na niej uczysz się czuć wiatr.</p><ul><li>2–3 osoby</li><li>kurs podstawowy</li></ul></article>
+      <article class="boat" style="--c:var(--zolty)"><h3>Sasanka 660</h3><p>Mały jacht kabinowy, na którym zdajesz egzamin.</p><ul><li>4–5 osób</li><li>kurs na patent</li></ul></article>
+      <article class="boat" style="--c:#1446A0"><h3>Antila 27</h3><p>Rejsy stażowe i noce na kotwicy na wielkich jeziorach.</p><ul><li>6 osób</li><li>rejsy szkoleniowe</li></ul></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><p>Halsem, szkoła żeglarstwa. Port w Giżycku, keja 0. Tel. 87 000 00 00</p><p>Strona pokazowa przygotowana przez WebFolk. Firma i dane są fikcyjne.</p></div></footer>
+
+<script>
+(function(){
+  var courses={
+    start:{name:'Pierwszy kontakt',days:3,price:'690 zł',boat:'Omega',why:'Trzy dni na małej łódce. Sprawdzisz, czy żeglowanie jest dla Ciebie, zanim zapłacisz za cały kurs.'},
+    patent:{name:'Kurs na patent',days:14,price:'2 890 zł',boat:'Sasanka 660',why:'Pełne szkolenie z egzaminem na żeglarza jachtowego. Po kursie możesz sam czarterować jacht.'},
+    weekend:{name:'Patent w weekendy',days:8,price:'2 490 zł',boat:'Sasanka 660',why:'Ten sam program co kurs na patent, rozłożony na cztery weekendy w maju i czerwcu.'},
+    oboz:{name:'Obóz młodzieżowy',days:12,price:'2 650 zł',boat:'Omega i Sasanka',why:'Dla osób od 12 do 17 lat. Nocleg w ośrodku, opieka wychowawców i egzamin na koniec dla chętnych.'},
+    rejs:{name:'Rejs stażowy',days:7,price:'1 590 zł',boat:'Antila 27',why:'Masz już patent i chcesz nabrać pewności. Tydzień pływania po wielkich jeziorach z nocami na kotwicy.'}
+  };
+  var qs=[
+    {t:'Pływałeś już kiedyś pod żaglami?',a:[['Nigdy','0'],['Kilka razy jako załoga','1'],['Mam patent','2']]},
+    {t:'Ile masz lat?',a:[['Mniej niż 18','teen'],['18 lub więcej','adult']]},
+    {t:'Ile masz czasu?',a:[['Weekend lub kilka dni','short'],['Tydzień','week'],['Dwa tygodnie','long'],['Tylko weekendy przez miesiąc','weekends']]},
+    {t:'Czego chcesz na koniec?',a:[['Spróbować i zobaczyć','try','bez egzaminu'],['Mieć patent','cert','egzamin PZŻ'],['Pływać pewniej','skill','dla zaawansowanych']]}
+  ];
+  var ans=[],q=document.getElementById('q'),steps=document.getElementById('steps').children;
+  function mark(i){for(var k=0;k<steps.length;k++){steps[k].className=k<i?'done':(k===i?'on':'');}}
+  function pick(){
+    var exp=ans[0],age=ans[1],time=ans[2],goal=ans[3];
+    if(exp==='2'||goal==='skill')return 'rejs';
+    if(age==='teen')return 'oboz';
+    if(goal==='try'||time==='short')return 'start';
+    if(time==='weekends')return 'weekend';
+    return 'patent';
+  }
+  function show(i){
+    mark(i);
+    if(i===qs.length){
+      var key=pick(),c=courses[key];
+      q.innerHTML='<div class="res"><p>Polecamy</p><h3 class="name">'+c.name+'</h3><p class="why">'+c.why+'</p><dl><div><dt>Czas</dt><dd>'+c.days+' dni</dd></div><div><dt>Jacht</dt><dd>'+c.boat+'</dd></div><div><dt>Cena</dt><dd>'+c.price+'</dd></div></dl><a class="btn" href="#terminy" data-k="'+key+'" id="goDates" style="justify-self:start;margin-top:8px">Pokaż terminy tego kursu</a><button class="linkbtn" type="button" id="again">Odpowiedz jeszcze raz</button></div>';
+      document.getElementById('again').onclick=function(){ans=[];show(0);};
+      document.getElementById('goDates').onclick=function(){highlight=c.name;month='all';drawBar();drawRows();};
+      return;
+    }
+    var it=qs[i],h='<p>Pytanie '+(i+1)+' z '+qs.length+'</p><h3>'+it.t+'</h3><div class="answers">';
+    it.a.forEach(function(a){h+='<button type="button" data-v="'+a[1]+'">'+a[0]+(a[2]?'<small>'+a[2]+'</small>':'')+'</button>';});
+    q.innerHTML=h+'</div>';
+    q.querySelectorAll('button').forEach(function(b){b.onclick=function(){ans[i]=b.dataset.v;show(i+1);};});
+  }
+  show(0);
+
+  var terms=[
+    ['Patent w weekendy','2027-05-08','2027-05-30',8,2490,3],['Pierwszy kontakt','2027-05-21','2027-05-23',3,690,5],
+    ['Kurs na patent','2027-06-26','2027-07-09',14,2890,0],['Obóz młodzieżowy','2027-07-01','2027-07-12',12,2650,2],
+    ['Pierwszy kontakt','2027-07-09','2027-07-11',3,690,6],['Kurs na patent','2027-07-10','2027-07-23',14,2890,4],
+    ['Rejs stażowy','2027-07-24','2027-07-30',7,1590,1],['Obóz młodzieżowy','2027-08-02','2027-08-13',12,2650,7],
+    ['Kurs na patent','2027-08-07','2027-08-20',14,2890,5],['Rejs stażowy','2027-08-28','2027-09-03',7,1590,3],['Pierwszy kontakt','2027-09-10','2027-09-12',3,690,8]
+  ];
+  var month='all',highlight=null,mNames={'05':'maj','06':'czerwiec','07':'lipiec','08':'sierpień','09':'wrzesień'};
+  function drawBar(){
+    var b=document.getElementById('bar'),h='<button type="button" data-m="all" aria-pressed="'+(month==='all')+'">Wszystkie</button>';
+    Object.keys(mNames).forEach(function(m){h+='<button type="button" data-m="'+m+'" aria-pressed="'+(month===m)+'">'+mNames[m]+'</button>';});
+    b.innerHTML=h;b.querySelectorAll('button').forEach(function(x){x.onclick=function(){month=x.dataset.m;drawBar();drawRows();};});
+  }
+  function fmt(s){return new Date(s+'T12:00').toLocaleDateString('pl-PL',{day:'numeric',month:'short'});}
+  function drawRows(){
+    var h='';
+    terms.filter(function(t){return month==='all'||t[1].slice(5,7)===month;}).forEach(function(t){
+      var seats='';for(var i=0;i<8;i++)seats+='<i class="'+(i<t[5]?'free':'')+'"></i>';
+      h+='<tr class="'+(highlight===t[0]?'hl':'')+'"><td class="kurs">'+t[0]+'</td><td class="num">'+fmt(t[1])+' – '+fmt(t[2])+'</td><td class="num">'+t[3]+'</td><td>'+(t[5]?'<div class="seats">'+seats+'<span>wolne: '+t[5]+'</span></div>':'<span class="full">Brak miejsc</span>')+'</td><td class="num">'+t[4].toLocaleString('pl-PL')+' zł</td></tr>';
+    });
+    document.getElementById('rows').innerHTML=h||'<tr><td colspan="5">W tym miesiącu nie mamy kursów.</td></tr>';
+  }
+  drawBar();drawRows();
+})();
+</script>
+</body>
+</html>
